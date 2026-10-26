@@ -1,0 +1,11 @@
+ok   desktop index.html                   hscroll 0px 
+ok   desktop view.html?id=01              hscroll 0px 
+ok   desktop view.html?id=05&f=portrait   hscroll 0px 
+ok   desktop view.html?id=10&f=square     hscroll 0px 
+ok   desktop sources.html                 hscroll 0px 
+ok   mobile  index.html                   hscroll 0px 
+ok   mobile  view.html?id=01              hscroll 0px 
+ok   mobile  view.html?id=05&f=portrait   hscroll 0px 
+ok   mobile  view.html?id=10&f=square     hscroll 0px 
+ok   mobile  sources.html                 hscroll 0px 
+all page checks passed

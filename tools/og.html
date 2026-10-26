@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>OG card</title>
+<link rel="stylesheet" href="../assets/css/board.css">
+<style>
+  html, body { margin: 0; background: #142530; }
+  .og { --w: 1200px; --h: 630px; width: 1200px; height: 630px; }
+  .og .in { position: absolute; inset: 56px 64px 48px 92px; display: grid; grid-template-columns: 1fr 470px; column-gap: 48px; }
+  .og h1 { margin: 22px 0 0; font-size: 64px; line-height: 1.04; font-weight: 500; color: #fff; letter-spacing: -.01em; }
+  .og h1 em { font-style: normal; color: #FF5050; }
+  .og p { margin: 20px 0 0; font-size: 25px; line-height: 1.4; color: #DCDCDC; }
+  .og ol { list-style: none; margin: 0; padding: 0; display: grid; row-gap: 0; align-content: center; }
+  .og li { display: grid; grid-template-columns: 42px 1fr; font-size: 21px; color: #ECEBEC; padding: 7px 0; border-bottom: 2px solid rgba(236,235,236,.1); }
+  .og li span { color: #FF5050; font-weight: 600; }
+  .og .lg { position: absolute; left: 92px; bottom: 48px; height: 42px; }
+</style>
+</head>
+<body>
+<div class="board og"><div class="tex"></div><div class="bar"></div>
+  <div class="in">
+    <div>
+      <div class="label"><span class="rule"></span><span>Redbelly Explained</span><span class="sep"></span><span class="num">11 infographics</span></div>
+      <h1>Redbelly, <em>explained</em> one idea at a time.</h1>
+      <p>Plain language. Every fact sourced. In 16:9, 4:5 and 1:1.</p>
+    </div>
+    <ol id="list"></ol>
+  </div>
+  <img class="lg" src="../assets/brand/redbelly-horizontal-negative.svg" alt="Redbelly">
+</div>
+<script src="../assets/js/content.js"></script>
+<script>
+  document.getElementById('list').innerHTML = RB.items.map(function (x) { return '<li><span>' + x.id + '</span>' + x.short + '</li>'; }).join('');
+  document.fonts.ready.then(function () { document.body.setAttribute('data-ready', '1'); });
+</script>
+</body>
+</html>

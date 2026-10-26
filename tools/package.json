@@ -1,0 +1,15 @@
+{
+  "name": "redbelly-explained-tools",
+  "private": true,
+  "type": "module",
+  "description": "Export and check scripts for the Redbelly Explained infographics. Not needed to deploy the site.",
+  "scripts": {
+    "render": "node render.mjs",
+    "verify": "node verify.mjs",
+    "site-check": "node site-check.mjs",
+    "quotes": "python3 check_quotes.py ../verification/snapshots"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redbelly Explained</title>
+<meta name="description" content="One Redbelly Explained infographic: animated view, three downloadable formats, alt text and sources.">
+<meta name="theme-color" content="#142530">
+<meta property="og:title" content="Redbelly Explained">
+<meta property="og:image" content="/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="assets/brand/redbelly-isotype-red.svg">
+<link rel="preload" href="assets/fonts/ReadexPro-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/board.css">
+<link rel="stylesheet" href="assets/css/diagrams.css">
+<link rel="stylesheet" href="assets/css/motion.css">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#vstage">Skip to the infographic</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/brand/redbelly-horizontal-negative.svg" alt="Redbelly" width="108" height="30"><span>Explained</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="./#series">Series</a>
+      <a class="hide-sm" href="sources.html">Sources</a>
+      <a class="btn" href="downloads/redbelly-explained-all-png.zip" download>Download all</a>
+    </nav>
+  </div>
+</header>
+
+<main class="viewer">
+  <div class="wrap">
+    <div class="vhead">
+      <div class="crumbs"><a href="./#series">Series</a><span aria-hidden="true">/</span><span id="crumb-title"></span></div>
+      <div class="tabs" role="tablist" aria-label="Format">
+        <button role="tab" data-f="landscape" aria-selected="true">16:9</button>
+        <button role="tab" data-f="portrait" aria-selected="false">4:5</button>
+        <button role="tab" data-f="square" aria-selected="false">1:1</button>
+      </div>
+    </div>
+    <div class="vbody">
+      <div>
+        <div class="vstage-wrap"><div id="vstage" style="width:100%"></div></div>
+        <div class="tools">
+          <button class="btn ghost" id="replay" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.3-5.6M4 4v4h4"/></svg>
+            Replay animation
+          </button>
+        </div>
+        <nav class="pager" id="pager" aria-label="Previous and next"></nav>
+      </div>
+      <aside class="side">
+        <div class="panel"><h3>Download PNG</h3><div class="dl" id="downloads"></div></div>
+        <div class="panel"><h3>Alt text</h3><p class="alt" id="alt"></p><button class="btn ghost" id="copy-alt" type="button">Copy alt text</button></div>
+        <div class="panel"><h3>Sources</h3><div id="refs"></div></div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="foot-site">
+  <div class="wrap">
+    <img src="assets/brand/redbelly-horizontal-negative.svg" alt="Redbelly" width="94" height="26">
+    <p>An educational series for the Redbelly Community DAO. Facts last verified 26 Oct 2026. Nothing here is financial advice or a view on any token price.</p>
+  </div>
+</footer>
+
+<script src="assets/js/content.js"></script>
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/board.js"></script>
+<script src="assets/js/site.js"></script>
+<script>RB.site.viewer();</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+PASS  11 infographics defined  (11 items)
+PASS  33 PNGs present at the required sizes  (33 found)
+PASS  No em or en dashes anywhere
+PASS  No emoji
+PASS  No filler verbs (elevate, seamless, unleash, revolutionize)
+PASS  No price talk, advice or returns in artwork copy
+PASS  No personal credit, names or handles in artwork or site
+PASS  Every infographic prints its sources
+PASS  Every infographic has a section in SOURCES.md
+PASS  Every source reference resolves to a URL
+PASS  All sources are supplied resources (or pages on them)
+PASS  Governance copy has no Snapshot or Constitution v1.2 rules
+PASS  Governance cites the voting platform and the TASK-23 changelog
+PASS  Only Readex Pro (OFL) is embedded
+PASS  Logo files are the official brand kit SVGs  (redbelly-horizontal-negative.svg, redbelly-horizontal-white.svg, redbelly-isotype-red.svg, redbelly-isotype-white.svg)
+PASS  Font licence file included
+PASS  Vector PDFs for all 3 formats  (redbelly-explained-landscape-1920x1080.pdf, redbelly-explained-portrait-1080x1350.pdf, redbelly-explained-square-1080x1080.pdf)
+PASS  Last render had no overflowing text  (33 files rendered)
+PASS  Smallest text per format (px)  (1920x1080: 25px, 1080x1350: 21px, 1080x1080: 20px)
+PASS  Font loaded in every render
+
+20 of 20 checks passed.

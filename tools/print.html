@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Redbelly Explained vector export</title>
+<link rel="stylesheet" href="../assets/css/board.css">
+<link rel="stylesheet" href="../assets/css/diagrams.css">
+<style>
+  html, body { margin: 0; padding: 0; background: #142530; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .pg { page-break-after: always; break-after: page; overflow: hidden; }
+  .pg:last-child { page-break-after: auto; break-after: auto; }
+</style>
+</head>
+<body>
+<div id="m"></div>
+<script src="../assets/js/content.js"></script>
+<script src="../assets/js/icons.js"></script>
+<script src="../assets/js/board.js"></script>
+<script>
+  /* tools/print.html?f=landscape renders all 11 artboards, one per PDF page */
+  var f = new URLSearchParams(location.search).get('f') || 'landscape';
+  var fm = RB.formats[f];
+  var st = document.createElement('style');
+  st.textContent = '@page { size: ' + fm.w + 'px ' + fm.h + 'px; margin: 0; } .pg { width: ' + fm.w + 'px; height: ' + fm.h + 'px; }';
+  document.head.appendChild(st);
+  document.getElementById('m').innerHTML = RB.items.map(function (it) {
+    return '<div class="pg">' + RB.renderBoard(it, f, { base: '../' }) + '</div>';
+  }).join('');
+  document.fonts.ready.then(function () { document.body.setAttribute('data-ready', '1'); });
+</script>
+</body>
+</html>

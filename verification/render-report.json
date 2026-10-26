@@ -1,0 +1,271 @@
+{
+  "verified": "26 Oct 2026",
+  "generated": "2026-10-26T12:41:01.577Z",
+  "problems": 0,
+  "files": [
+    {
+      "file": "downloads/landscape/01-what-is-redbelly-landscape-1920x1080.png",
+      "width": 1920,
+      "height": 1080,
+      "minFontPx": 25,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/portrait/01-what-is-redbelly-portrait-1080x1350.png",
+      "width": 1080,
+      "height": 1350,
+      "minFontPx": 21,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/square/01-what-is-redbelly-square-1080x1080.png",
+      "width": 1080,
+      "height": 1080,
+      "minFontPx": 20,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/landscape/02-why-tokenise-landscape-1920x1080.png",
+      "width": 1920,
+      "height": 1080,
+      "minFontPx": 25,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/portrait/02-why-tokenise-portrait-1080x1350.png",
+      "width": 1080,
+      "height": 1350,
+      "minFontPx": 21,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/square/02-why-tokenise-square-1080x1080.png",
+      "width": 1080,
+      "height": 1080,
+      "minFontPx": 20,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/landscape/03-dbft-consensus-landscape-1920x1080.png",
+      "width": 1920,
+      "height": 1080,
+      "minFontPx": 25,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/portrait/03-dbft-consensus-portrait-1080x1350.png",
+      "width": 1080,
+      "height": 1350,
+      "minFontPx": 21,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/square/03-dbft-consensus-square-1080x1080.png",
+      "width": 1080,
+      "height": 1080,
+      "minFontPx": 20,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/landscape/04-receptor-landscape-1920x1080.png",
+      "width": 1920,
+      "height": 1080,
+      "minFontPx": 25,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/portrait/04-receptor-portrait-1080x1350.png",
+      "width": 1080,
+      "height": 1350,
+      "minFontPx": 21,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/square/04-receptor-square-1080x1080.png",
+      "width": 1080,
+      "height": 1080,
+      "minFontPx": 20,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/landscape/05-verifiable-credentials-landscape-1920x1080.png",
+      "width": 1920,
+      "height": 1080,
+      "minFontPx": 25,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/portrait/05-verifiable-credentials-portrait-1080x1350.png",
+      "width": 1080,
+      "height": 1350,
+      "minFontPx": 21,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/square/05-verifiable-credentials-square-1080x1080.png",
+      "width": 1080,
+      "height": 1080,
+      "minFontPx": 20,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/landscape/06-zk-proofs-landscape-1920x1080.png",
+      "width": 1920,
+      "height": 1080,
+      "minFontPx": 25,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/portrait/06-zk-proofs-portrait-1080x1350.png",
+      "width": 1080,
+      "height": 1350,
+      "minFontPx": 21,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/square/06-zk-proofs-square-1080x1080.png",
+      "width": 1080,
+      "height": 1080,
+      "minFontPx": 20,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/landscape/07-tokeniser-landscape-1920x1080.png",
+      "width": 1920,
+      "height": 1080,
+      "minFontPx": 25,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/portrait/07-tokeniser-portrait-1080x1350.png",
+      "width": 1080,
+      "height": 1350,
+      "minFontPx": 21,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/square/07-tokeniser-square-1080x1080.png",
+      "width": 1080,
+      "height": 1080,
+      "minFontPx": 20,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/landscape/08-compliance-aware-assets-landscape-1920x1080.png",
+      "width": 1920,
+      "height": 1080,
+      "minFontPx": 25,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/portrait/08-compliance-aware-assets-portrait-1080x1350.png",
+      "width": 1080,
+      "height": 1350,
+      "minFontPx": 21,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/square/08-compliance-aware-assets-square-1080x1080.png",
+      "width": 1080,
+      "height": 1080,
+      "minFontPx": 20,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/landscape/09-identity-and-accountability-landscape-1920x1080.png",
+      "width": 1920,
+      "height": 1080,
+      "minFontPx": 25,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/portrait/09-identity-and-accountability-portrait-1080x1350.png",
+      "width": 1080,
+      "height": 1350,
+      "minFontPx": 21,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/square/09-identity-and-accountability-square-1080x1080.png",
+      "width": 1080,
+      "height": 1080,
+      "minFontPx": 20,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/landscape/10-governance-landscape-1920x1080.png",
+      "width": 1920,
+      "height": 1080,
+      "minFontPx": 25,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/portrait/10-governance-portrait-1080x1350.png",
+      "width": 1080,
+      "height": 1350,
+      "minFontPx": 21,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/square/10-governance-square-1080x1080.png",
+      "width": 1080,
+      "height": 1080,
+      "minFontPx": 20,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/landscape/11-project-acacia-landscape-1920x1080.png",
+      "width": 1920,
+      "height": 1080,
+      "minFontPx": 25,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/portrait/11-project-acacia-portrait-1080x1350.png",
+      "width": 1080,
+      "height": 1350,
+      "minFontPx": 21,
+      "fontLoaded": true,
+      "issues": []
+    },
+    {
+      "file": "downloads/square/11-project-acacia-square-1080x1080.png",
+      "width": 1080,
+      "height": 1080,
+      "minFontPx": 20,
+      "fontLoaded": true,
+      "issues": []
+    }
+  ]
+}

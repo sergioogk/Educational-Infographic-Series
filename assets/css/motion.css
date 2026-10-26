@@ -1,0 +1,55 @@
+/*
+  Redbelly Explained: motion.
+  Neither brand kit defines motion, so motion stays quiet and functional:
+  fades, short rises, line draws and slow pulses. The logo is never animated,
+  scaled, rotated or recoloured. Everything is off for prefers-reduced-motion,
+  and the PNG exports use the static final frame (no .anim class).
+*/
+.board.anim .a { opacity: 0; transform: translateY(18px); }
+.board.anim .a.pop { transform: scale(.92); }
+.board.anim.play .a {
+  animation: rb-rise .72s var(--ease) both;
+  animation-delay: calc(var(--i, 0) * 85ms + 120ms);
+}
+.board.anim.play .a.pop { animation-name: rb-pop; animation-duration: .9s; }
+.board.anim.play .label .rule { animation: rb-grow .8s var(--ease) both .1s; transform-origin: left; }
+
+@keyframes rb-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes rb-pop  { from { opacity: 0; transform: scale(.92); } to { opacity: 1; transform: none; } }
+@keyframes rb-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+/* connectors draw on, then a slow travelling dash shows direction */
+.board.anim.play .flowline { stroke-dasharray: 6 10; animation: rb-dash 1.6s linear infinite; }
+.board.anim.play .arrow .flow { stroke-dasharray: 40; stroke-dashoffset: 40; animation: rb-draw .7s var(--ease) forwards; animation-delay: inherit; }
+.board.anim.play .arrow { animation-delay: calc(var(--i, 0) * 85ms + 260ms); }
+@keyframes rb-dash { to { stroke-dashoffset: -32; } }
+@keyframes rb-draw { to { stroke-dashoffset: 0; } }
+
+/* slow pulses on the one element that carries the idea */
+.board.anim.play .fast .ring { animation: rb-ring 3.2s ease-in-out infinite 1.4s; transform-box: fill-box; transform-origin: center; }
+@keyframes rb-ring { 0%, 100% { opacity: .35; transform: scale(1); } 50% { opacity: 1; transform: scale(1.04); } }
+
+.board.anim.play .dbft .super { animation: rb-glow 2.8s ease-in-out infinite 1.6s; }
+.board.anim.play .dbft .seg { animation: rb-seg .6s var(--ease) both; animation-delay: calc(var(--s) * 140ms + 900ms); }
+.board.anim.play .dbft .lose { animation: rb-fade 1s ease both 1.2s; }
+@keyframes rb-glow { 0%, 100% { fill-opacity: .14; } 50% { fill-opacity: .32; } }
+@keyframes rb-seg { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: none; } }
+@keyframes rb-fade { to { opacity: .45; } }
+
+.board.anim.play .zk .redact .bars i { animation: rb-shimmer 2.4s ease-in-out infinite; }
+.board.anim.play .zk .redact .bars i:nth-child(2) { animation-delay: .2s; }
+.board.anim.play .zk .redact .bars i:nth-child(3) { animation-delay: .4s; }
+@keyframes rb-shimmer { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+
+.board.anim.play .aca-m.key .aca-dot,
+.board.anim.play .tk-s:first-child .tk-dot,
+.board.anim.play .gv-f .dot { animation: rb-beat 2.6s ease-in-out infinite 1.5s; }
+@keyframes rb-beat { 0%, 100% { box-shadow: 0 0 0 0 rgba(255,80,80,.0); } 50% { box-shadow: 0 0 0 10px rgba(255,80,80,.18); } }
+
+.board.anim.play .cp-lane.no .glyph-no { animation: rb-shake .5s ease 1.6s both; }
+@keyframes rb-shake { 20%, 60% { transform: translateX(-5px); } 40%, 80% { transform: translateX(5px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .board.anim .a, .board.anim.play .a { opacity: 1 !important; transform: none !important; animation: none !important; }
+  .board.anim.play *, .board.anim.play *::before { animation: none !important; }
+}

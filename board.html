@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Redbelly Explained Artboard</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="assets/css/board.css">
+<link rel="stylesheet" href="assets/css/diagrams.css">
+<link rel="stylesheet" href="assets/css/motion.css">
+<style>
+  html, body { margin: 0; padding: 0; background: #142530; }
+  body { width: max-content; }
+</style>
+</head>
+<body>
+<div id="mount"></div>
+<script src="assets/js/content.js"></script>
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/board.js"></script>
+<script>
+  /* board.html?id=03&f=landscape        static final frame (used for PNG export)
+     board.html?id=03&f=landscape&anim=1  plays the entrance animation */
+  (function () {
+    var q = new URLSearchParams(location.search);
+    var id = q.get('id') || '01';
+    var f = q.get('f') || 'landscape';
+    var item = RB.items.filter(function (x) { return x.id === id || x.slug === id; })[0] || RB.items[0];
+    var mount = document.getElementById('mount');
+    mount.innerHTML = RB.renderBoard(item, f);
+    document.title = RB.plain(item.title) + ' | ' + RB.formats[f].label;
+    var board = mount.firstChild;
+    var go = function () {
+      if (q.get('anim')) { board.classList.add('anim'); requestAnimationFrame(function () { board.classList.add('play'); }); }
+      document.body.setAttribute('data-ready', '1');
+    };
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(go); else go();
+  })();
+</script>
+</body>
+</html>

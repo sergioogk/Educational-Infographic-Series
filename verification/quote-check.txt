@@ -1,0 +1,112 @@
+ok    [01 What is Redbelly] The Redbelly Network is a layer 1 blockchain, built and optimised for   ->  docs.txt
+ok    [01 What is Redbelly] Firstly, all network participants are known. We enforce mandatory iden  ->  whitepaper_pdf.txt
+ok    [01 What is Redbelly] implements novel security and scaling features that deliver Finality,   ->  whitepaper_pdf.txt
+ok    [01 What is Redbelly] transactions are confirmed as irreversible within seconds  ->  whitepaper_pdf.txt
+ok    [01 What is Redbelly] It cannot fork  ->  whitepaper_pdf.txt
+ok    [01 What is Redbelly] has been mathematically proven to be correct through a process of form  ->  whitepaper_pdf.txt
+ok    [01 What is Redbelly] DBFT has demonstrated over 97,500 transactions per second in productio  ->  whitepaper_pdf.txt
+ok    [01 What is Redbelly] Redbelly provides the infrastructure to issue, manage, and distribute   ->  home.txt
+ok    [01 What is Redbelly] democratic byzantine fault tolerant (DBFT) consensus developed with Th  ->  whitepaper.txt
+ok    [01 What is Redbelly] a scalable EVM implementation  ->  docs.txt
+ok    [01 What is Redbelly] the largest pool of developers already proficient in the Solidity prog  ->  whitepaper_pdf.txt
+ok    [02 Why tokenise real world a] Tokenisation records ownership of financial products and services as d  ->  tokeniser.txt
+ok    [02 Why tokenise real world a] Tokenisation does not change what you own. It changes how ownership is  ->  why-tokenise-your-assets.txt
+ok    [02 Why tokenise real world a] settlement that happens in seconds instead of T+2  ->  why-tokenise-your-assets.txt
+ok    [02 Why tokenise real world a] The transfer of the token and the corresponding payment occur in the s  ->  what-does-tokenising-your-assets-enable.txt
+ok    [02 Why tokenise real world a] 24/7 transferability removes the dependency on business-hours registry  ->  what-does-tokenising-your-assets-enable.txt
+ok    [02 Why tokenise real world a] have traditionally required large minimum investments  ->  what-does-tokenising-your-assets-enable.txt
+ok    [02 Why tokenise real world a] any asset can be divided into smaller units, lowering the investment t  ->  what-does-tokenising-your-assets-enable.txt
+ok    [02 Why tokenise real world a] Transfer eligibility is verified manually when a transfer is requested  ->  what-does-tokenising-your-assets-enable.txt
+ok    [02 Why tokenise real world a] KYC/AML, transfer restrictions, and investor eligibility are enforced   ->  what-does-tokenising-your-assets-enable.txt
+ok    [03 DBFT consensus] a new leaderless Byzantine consensus called the Democratic Byzantine F  ->  dbft_page.txt
+ok    [03 DBFT consensus] each node plays a similar role in the execution of the consensus  ->  dbft_page.txt
+ok    [03 DBFT consensus] As a leaderless consensus algorithm, it eliminates single points of fa  ->  whitepaper_pdf.txt
+ok    [03 DBFT consensus] This is a waste of resources as only one participant succeeds and the   ->  whitepaper_pdf.txt
+ok    [03 DBFT consensus] solve consensus by combining distinct sets of transactions into a ‘sup  ->  whitepaper_pdf.txt
+ok    [03 DBFT consensus] It cannot fork  ->  whitepaper_pdf.txt
+ok    [03 DBFT consensus] transactions are confirmed as irreversible within seconds  ->  whitepaper_pdf.txt
+ok    [03 DBFT consensus] formal verification through parameterised model checking  ->  whitepaper_pdf.txt
+ok    [03 DBFT consensus] for any number n of processes and any number f < n/3 of Byzantine proc  ->  research.txt
+ok    [04 Receptor] Receptor is Redbelly's native digital identity and verifiable credenti  ->  receptor.txt
+ok    [04 Receptor] It facilitates network access, ensuring that all network participants   ->  receptor.txt
+ok    [04 Receptor] Only accredited issuers can issue credentials that give users network   ->  modules_issuer.txt
+ok    [04 Receptor] AUSophisticatedWholesaleInvestorCredential  ->  eligibility-sdk_configure-eligibility-criteria.txt
+ok    [04 Receptor] The framework is composed of three essential modules; the Issuer, the   ->  receptor.txt
+ok    [04 Receptor] Receptor is built on the W3C verifiable credential data model  ->  receptor.txt
+ok    [04 Receptor] Use this method when you want to surface eligibility criteria and vali  ->  receptor.txt
+ok    [04 Receptor] Use this method when you require users to reveal specified, verifiable  ->  receptor.txt
+ok    [05 Verifiable credentials] Use to define and issue verifiable credentials to users.  ->  receptor.txt
+ok    [05 Verifiable credentials] Sign the messages and construct the proof.  ->  methods_selective-disclosure.txt
+ok    [05 Verifiable credentials] Use to create experiences for users to store, manage, and use credenti  ->  receptor.txt
+ok    [05 Verifiable credentials] AMLCTFCredential  ->  eligibility-sdk_configure-eligibility-criteria.txt
+ok    [05 Verifiable credentials] AML status equals "passed"  ->  eligibility-sdk_configure-eligibility-criteria.txt
+ok    [05 Verifiable credentials] Reusable client identity and KYC credentials streamline onboarding and  ->  assettok.txt
+ok    [05 Verifiable credentials] user data is kept at the edge and is not duplicated across each servic  ->  whitepaper_pdf.txt
+ok    [05 Verifiable credentials] checks its mathematical validity against the trusted issuer's public k  ->  eligibility-sdk_overview.txt
+ok    [05 Verifiable credentials] making them resistant to forgery and tampering  ->  eligibility-sdk_overview.txt
+ok    [06 Zero knowledge proofs] allow users to prove a statement is true without revealing any of the   ->  sdzk.txt
+ok    [06 Zero knowledge proofs] The verifier asks a yes/no question using a query  ->  sdzk.txt
+ok    [06 Zero knowledge proofs] The user's wallet generates a cryptographic proof that they satisfy th  ->  sdzk.txt
+ok    [06 Zero knowledge proofs] the proof of age can be made without disclosing their exact birth date  ->  methods_proof-by-query.txt
+ok    [06 Zero knowledge proofs] For on-chain verification method the proof is submitted to and verifie  ->  sdzk.txt
+ok    [06 Zero knowledge proofs] The result is a simple "true" or "false," with no personal data ever b  ->  sdzk.txt
+ok    [06 Zero knowledge proofs] is a method where a user reveal only specific fields from their creden  ->  sdzk.txt
+ok    [06 Zero knowledge proofs] No personal data is ever revealed to the verifier or recorded on-chain  ->  sdzk.txt
+ok    [07 Tokeniser] Tokeniser is a Redbelly Network project  ->  tokeniser.txt
+ok    [07 Tokeniser] It enables fund managers, company secretaries, and asset administrator  ->  what-is-tokeniser.txt
+ok    [07 Tokeniser] Tokeniser gives you the benefits of tokenisation without the technolog  ->  tokeniser.txt
+ok    [07 Tokeniser] Define asset class, compliance rules, corporate action schedule, and f  ->  how-does-tokeniser-work.txt
+ok    [07 Tokeniser] Investors complete identity verification and investor classification u  ->  how-does-tokeniser-work.txt
+ok    [07 Tokeniser] Tokens are minted on Redbelly Network and transferred to verified inve  ->  how-does-tokeniser-work.txt
+ok    [07 Tokeniser] Every transfer is checked against configured compliance parameters bef  ->  how-does-tokeniser-work.txt
+ok    [07 Tokeniser] Compliant transfers settle atomically on Redbelly Network in seconds.  ->  how-does-tokeniser-work.txt
+ok    [07 Tokeniser] The platform executes the action programmatically across all eligible   ->  how-does-tokeniser-work.txt
+ok    [07 Tokeniser] No manual compilation or reconciliation is required.  ->  how-does-tokeniser-work.txt
+ok    [07 Tokeniser] A$1.2B issued equity & funds 160+ companies and funds A$2B+ transactio  ->  tokeniser.txt
+ok    [08 Compliance aware assets] This transforms the complexity of compliance assurance into an inheren  ->  whitepaper_pdf.txt
+ok    [08 Compliance aware assets] the asset issuer has been able to program the eligibility criteria int  ->  whitepaper_pdf.txt
+ok    [08 Compliance aware assets] defined investor eligibility, enforced at the point of trade.  ->  assettok.txt
+ok    [08 Compliance aware assets] Foreign ownership limits, lock-up periods, and wholesale investor thre  ->  how-tokeniser-handles-investor-compliance.txt
+ok    [08 Compliance aware assets] Compliance rules, KYC/AML status, investor eligibility criteria, trans  ->  how-tokeniser-handles-investor-compliance.txt
+ok    [08 Compliance aware assets] Non-compliant transfers, to unverified wallets, ineligible investors,   ->  how-tokeniser-handles-investor-compliance.txt
+ok    [08 Compliance aware assets] Trades that fail a check do not proceed, and every check is logged.  ->  product_superpowers_automated-compliance.txt
+ok    [08 Compliance aware assets] they automatically inherit the compliance properties of the underlying  ->  whitepaper_pdf.txt
+ok    [09 Identity and accountabili] The foundational concept of our system is accountable blockspace.  ->  whitepaper_pdf.txt
+ok    [09 Identity and accountabili] through our marketplace of accredited verifiable credential issuers.  ->  whitepaper_pdf.txt
+ok    [09 Identity and accountabili] from individuals, to businesses, to AI agents  ->  whitepaper_pdf.txt
+ok    [09 Identity and accountabili] all transactions can be tied back to a responsible entity.  ->  whitepaper_pdf.txt
+ok    [09 Identity and accountabili] they leave cryptographically signed traces that honest nodes can combi  ->  whitepaper_pdf.txt
+ok    [09 Identity and accountabili] an exclusion protocol to remove the identified faulty nodes from the c  ->  whitepaper_pdf.txt
+ok    [09 Identity and accountabili] is able to detect and punish malicious nodes using undeniable proofs o  ->  whitepaper_pdf.txt
+ok    [09 Identity and accountabili] Participants verify their identities, but their privacy remains protec  ->  acacia.txt
+ok    [10 Governance] Signature voting on Redbelly. No gas, no subscription.  ->  voting_pages.txt
+ok    [10 Governance] Only wallets holding a Receptor credential can vote, as Redbelly requi  ->  voting_pages.txt
+ok    [10 Governance] Every address here clears Redbelly’s passport-backed identity check.  ->  voting_pages.txt
+ok    [10 Governance] Publishing signs a message. It costs no gas, and a proposal cannot be   ->  voting_pages.txt
+ok    [10 Governance] Verified wallets only  ->  voting_pages.txt
+ok    [10 Governance] Only wallets holding a Receptor credential can vote  ->  voting_pages.txt
+ok    [10 Governance] Voting system  ->  voting_pages.txt
+ok    [10 Governance] Voting power  ->  voting_pages.txt
+ok    [10 Governance] Voting period (days)  ->  voting_pages.txt
+ok    [10 Governance] Quorum (0 for none)  ->  voting_pages.txt
+ok    [10 Governance] Identity quorum (0 for none)  ->  voting_pages.txt
+ok    [10 Governance] Distinct verified voters who must take part, however much weight they   ->  voting_pages.txt
+ok    [10 Governance] Your signature is stored with your ballot, so anyone can re-verify tha  ->  voting_pages.txt
+ok    [10 Governance] Receipts on IPFS  ->  voting_rendered.txt
+ok    [10 Governance] New treasury-funded initiatives are suspended until a future governanc  ->  task23_rendered.txt
+ok    [10 Governance] Elected 3 High Council seats.  ->  task23_tabs.txt
+ok    [10 Governance] Five pods: Marketing, Builder/Develop, Researcher, Community and Partn  ->  task23_rendered.txt
+ok    [11 Project Acacia] a real-money pilot examining how tokenised money and assets could impr  ->  task07.txt
+ok    [11 Project Acacia] transacting using real tokenized assets and AUD on Redbelly Network.  ->  acacia.txt
+ok    [11 Project Acacia] Phase 1, completed in 2024, was conceptual: it mapped the space of pos  ->  task07.txt
+ok    [11 Project Acacia] In July 2025 the Reserve Bank of Australia (RBA) and the Digital Finan  ->  task07.txt
+ok    [11 Project Acacia] ran from July 2025 (when participants were announced) through February  ->  task07.txt
+ok    [11 Project Acacia] the RBA’s May 2026 Final Report  ->  task07.txt
+ok    [11 Project Acacia] Of the three platforms onto which the RBA actually issued its pilot wh  ->  task07.txt
+ok    [11 Project Acacia] used Redbelly’s mainnet across five of the twenty completed use cases.  ->  task07.txt
+ok    [11 Project Acacia] issuance, coupon registration, and the secondary transfer completed en  ->  task07.txt
+ok    [11 Project Acacia] would conventionally have taken up to four days  ->  task07.txt
+ok    [11 Project Acacia] It has settled a tokenised corporate bond in the Reserve Bank of Austr  ->  technology.txt
+ok    [11 Project Acacia] it upgrades the settlement layer between regulated financial instituti  ->  task07.txt
+
+110 quotes checked, 110 found, 0 missing.
