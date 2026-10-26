@@ -2,6 +2,8 @@
 
 Eleven plain-language infographics on Redbelly's core ideas, built as one series. Each topic comes in landscape 16:9, portrait 4:5 and square 1:1. The package includes an animated showcase site that deploys to Vercel as-is.
 
+Live site: https://redbelly-visual-academy.vercel.app
+
 Every fact comes from the resources in the brief. `SOURCES.md` lists them claim by claim, and `VERIFICATION.md` shows the checks that were run.
 
 ## Deliverables
