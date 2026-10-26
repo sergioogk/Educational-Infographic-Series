@@ -54,8 +54,11 @@ const priceRe = /\b(price|prices|profit|profits|returns?|yield|apy|apr|roi|moon|
 const price = strings.filter(x => priceRe.test(x.s)).map(x => `${x.path}: "${x.s}"`);
 check('No price talk, advice or returns in artwork copy', !price.length, price.join(' | '));
 
-// 4. no personal credit: names, handles, signatures, watermarks, "made by"
-const people = /(@[a-z0-9_]{2,}|made by|designed by|created by|\bby @|buffy|nekoyamaneki|majnoon|benny|polites|berlin|jhon|khalid|maina|gramoli|alan burt|rod lewis|smartcodedbot)/i;
+// 4. no personal credit: handles, signatures, watermarks, "made by" lines.
+// Names to block are passed at run time so none are stored in the repo:
+//   RB_BLOCK_NAMES="name one,name two" node tools/verify.mjs
+const extra = (process.env.RB_BLOCK_NAMES || '').split(',').map(s => s.trim()).filter(Boolean).map(s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+const people = new RegExp('(@[a-z0-9_]{2,}|made by|designed by|created by|\\bby @' + (extra.length ? '|' + extra.join('|') : '') + ')', 'i');
 const credit = strings.concat(docs.filter(d => d.path.endsWith('.html'))).filter(x => people.test(x.s)).map(x => x.path);
 check('No personal credit, names or handles in artwork or site', !credit.length, credit.join(', '));
 
