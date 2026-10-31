@@ -7,6 +7,8 @@
     "render": "node render.mjs",
     "verify": "node verify.mjs",
     "site-check": "node site-check.mjs",
+    "phone": "node phone-check.mjs",
+    "snapshot": "node snapshot.mjs",
     "quotes": "python3 check_quotes.py ../verification/snapshots"
   },
   "devDependencies": {

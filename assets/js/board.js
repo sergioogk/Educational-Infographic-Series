@@ -42,7 +42,8 @@ RB.glyph = function (ok) {
 
 RB.renderBoard = function (item, format, opts) {
   opts = opts || {};
-  var hasPts = item.points && item.points.length > 0;
+  // 1:1 drops the three supporting points so the answer and diagram can stay at phone size
+  var hasPts = item.points && item.points.length > 0 && format !== 'square';
   var layout = format === 'landscape' ? (hasPts ? 'split' : 'stack') : 'stack';
   var logo = (opts.base || '') + 'assets/brand/redbelly-horizontal-negative.svg';
   var h = '';
@@ -66,7 +67,7 @@ RB.renderBoard = function (item, format, opts) {
   }
 
   h += '<footer' + RB.a(14, 'foot') + '><div class="src"><b>Sources:</b> ' + RB.esc(item.footer) +
-    (item.footerNoVerified ? '' : '<span class="ver">Last verified ' + RB.esc(RB.series.verified) + '</span>') +
+    '<span class="ver">' + RB.esc(item.footerNote || 'Last verified ' + RB.series.verified) + '</span>' +
     '</div><img class="logo" src="' + logo + '" alt="Redbelly"></footer>';
 
   h += '</div></div>';
@@ -102,6 +103,7 @@ RB.diagrams.compare = function (d, f) {
       '<div class="c-arr arrow">' + RB.arrowSvg('r') + '</div>' +
       '<div class="c-aft">' + RB.esc(r.after) + '</div></div>';
   });
+  if (d.note) h += '<div' + RB.a(8, 'cap cmp-note') + '>' + RB.esc(d.note) + '</div>';
   return h + '</div>';
 };
 
@@ -144,7 +146,7 @@ RB.diagrams.dbft = function (d, f) {
 
 /* 04: Receptor flow with two gates */
 RB.diagrams.receptor = function (d, f) {
-  var vert = f === 'portrait';
+  var vert = f !== 'landscape';
   var h = '<div class="rcp ' + (vert ? 'vert' : 'horiz') + '">';
   d.steps.forEach(function (s, i) {
     if (i > 0 && !vert) h += '<div' + RB.a(3 + i * 2 - 1, 'rcp-arr arrow') + '>' + RB.arrowSvg('r') + '</div>';
@@ -222,15 +224,26 @@ RB.diagrams.compliance = function (d, f) {
 /* 09: accountable blockspace, people and nodes */
 RB.diagrams.accountability = function (d, f) {
   var h = '<div class="ac">';
-  d.rows.forEach(function (r, ri) {
-    h += '<div class="ac-row">';
-    h += '<div' + RB.a(3 + ri * 4, 'ac-lab') + '>' + RB.esc(r.label) + '</div>';
-    r.steps.forEach(function (s, i) {
-      if (i > 0) h += '<div' + RB.a(4 + ri * 4 + i, 'ac-arr arrow') + '>' + RB.arrowSvg('r') + '</div>';
-      h += '<div' + RB.a(4 + ri * 4 + i, 'panel ac-s' + (i === 2 ? ' hot' : '')) + '>' + RB.icon(s.icon) + '<span class="cap">' + RB.esc(s.text) + '</span></div>';
+  if (f === 'landscape') {
+    d.rows.forEach(function (r, ri) {
+      h += '<div class="ac-row">';
+      h += '<div' + RB.a(3 + ri * 4, 'ac-lab') + '>' + RB.esc(r.label) + '</div>';
+      r.steps.forEach(function (s, i) {
+        if (i > 0) h += '<div' + RB.a(4 + ri * 4 + i, 'ac-arr arrow') + '>' + RB.arrowSvg('r') + '</div>';
+        h += '<div' + RB.a(4 + ri * 4 + i, 'panel ac-s' + (i === 2 ? ' hot' : '')) + '>' + RB.icon(s.icon) + '<span class="cap">' + RB.esc(s.text) + '</span></div>';
+      });
+      h += '</div>';
+    });
+  } else {
+    /* 4:5 and 1:1: two columns read top to bottom, rows lined up across both */
+    h += '<div class="ac-cols">';
+    d.rows.forEach(function (r, ri) { h += '<div' + RB.a(3 + ri, 'ac-lab') + '>' + RB.icon(ri ? 'nodes' : 'users') + '<span>' + RB.esc(r.label) + '</span></div>'; });
+    [0, 1, 2].forEach(function (i) {
+      if (i > 0) d.rows.forEach(function (r, ri) { h += '<div' + RB.a(4 + i * 2, 'ac-arr arrow') + '>' + RB.arrowSvg('d') + '</div>'; });
+      d.rows.forEach(function (r, ri) { h += '<div' + RB.a(5 + i * 2, 'panel ac-s' + (i === 2 ? ' hot' : '')) + '><span class="cap">' + RB.esc(r.steps[i].text) + '</span></div>'; });
     });
     h += '</div>';
-  });
+  }
   h += '</div><div' + RB.a(12, 'ac-notes') + '><div class="cap"><b>' + RB.esc(d.note) + '</b></div><div class="cap ac-priv">' + RB.icon('lock') + '<span>' + RB.esc(d.privacy) + '</span></div></div>';
   return h;
 };

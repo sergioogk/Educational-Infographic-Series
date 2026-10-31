@@ -21,15 +21,15 @@ Also included: the showcase website (`index.html`, `view.html`, `sources.html`),
 | # | Topic | One line answer on the artwork |
 |---|---|---|
 | 01 | What is Redbelly | A layer 1 blockchain built for tokenising real world assets, where every participant is verified. |
-| 02 | Why tokenise real world assets | Tokenising records ownership as a digital token, with the asset's rules built in. |
+| 02 | Why tokenise real world assets | A token records ownership, with the rules written in. The asset and its legal rights stay the same. |
 | 03 | DBFT consensus | There is no leader. Nodes build every block together. |
 | 04 | Receptor | Redbelly's own identity and verifiable credential protocol. It checks who can use the network and each product. |
-| 05 | Verifiable credentials | A digital proof about you, signed by a trusted issuer, kept in your own wallet. |
+| 05 | Verifiable credentials | A digital proof about you, signed by a trusted issuer and kept in your own wallet. |
 | 06 | ZK proofs | Prove something is true without revealing the data behind it. |
-| 07 | Tokeniser | A Redbelly Network project that lets funds and companies issue and run tokenised assets on Redbelly. |
-| 08 | Compliance aware assets | The rules travel with the asset. Every transfer is checked before it can settle. |
-| 09 | Identity and accountability | Every participant is known and cheating nodes can be caught with proof. |
-| 10 | Governance | DAO members vote on the voting platform. Only verified wallets can vote, and every ballot is signed and public. |
+| 07 | Tokeniser | A Redbelly Network project that lets funds and companies issue and run tokenised assets, without a technology project. |
+| 08 | Compliance aware assets | The rules travel with the asset. Every transfer is checked against them before it can settle. |
+| 09 | Identity and accountability | Every network participant is identity-verified. Nodes that try to make honest nodes disagree leave signed evidence. |
+| 10 | Governance | Only verified wallets can vote on the DAO voting platform. Every ballot is signed and public. |
 | 11 | Project Acacia | The RBA's real money pilot. Redbelly was the only public network to receive the pilot wholesale CBDC. |
 
 File names follow `NN-topic-format-WIDTHxHEIGHT.png`, for example `downloads/portrait/03-dbft-consensus-portrait-1080x1350.png`.
@@ -82,17 +82,27 @@ The Redbelly logo is never animated, scaled, recoloured or rotated. Everything i
 - **Voice and social rules:** from the Task Board brand kit. No em or en dashes, no emoji, say the number, lead with the answer. Exports are PNG rather than JPEG for anything with text. Every image carries a dated "Last verified" line. Editable sources are always supplied.
 - **Note for the DAO:** the Task Board kit asks that deliverables under the Redbelly Network name are checked with the core team. The logo files are used unmodified from the official kit, but the DAO may want that check before publishing.
 
-## Readability
+## Readability on a phone
 
-All text was checked by the export script. The smallest text on each format is:
+Every line of text, including the source line and the small labels, is at least 31 px. That is 11 pt or more on a phone, which is Apple's smallest recommended text size. Body text is 32 to 36 px.
 
-| Format | Smallest text | Body text | On a 390 pt wide phone |
+`tools/phone-check.mjs` measures this on every export. A phone shows a picture at full screen width, and the reference phone is 390 x 844 pt (the iPhone 12 to 16 size). The script turns each picture's font sizes into the points a reader actually sees, and saves what the phone screen shows in `verification/phone/`.
+
+| Format | How it is read | Smallest text | Body text |
 |---|---|---|---|
-| 4:5 portrait | 21 px (source line) | 26 to 28 px | body about 9.5 to 10 pt |
-| 1:1 square | 20 px (source line) | 24 to 25 px | body about 9 pt |
-| 16:9 landscape | 25 px (source line) | 31 to 34 px | body about 6.5 pt, so best on desktop or with the phone turned sideways |
+| 4:5 portrait | phone upright, 390 pt wide | 31 px = 11.2 pt | 33 px = 11.9 pt |
+| 1:1 square | phone upright, 390 pt wide | 31 px = 11.2 pt | 32 to 34 px = 11.6 to 12.3 pt |
+| 16:9 landscape | phone sideways, full screen, 693 pt wide | 31 px = 11.2 pt | 33 to 36 px = 12 to 13 pt |
 
-The 4:5 and 1:1 formats are the phone-first versions. For X and Discord posts aimed at phones, use those. Use 16:9 on the DAO website, the Start Here hub, desktop posts and slides.
+All 33 pass (`verification/phone-check.txt`). On an upright phone, 16:9 is only 390 pt wide (body about 7 pt), so use 4:5 or 1:1 for phone-first posts and 16:9 for the website, desktop and slides.
+
+To keep the text this size, the copy was cut back and each format has its own layout:
+
+- **4:5** keeps everything: the answer, the diagram and the three key points, set as one row each.
+- **1:1** is the short cut. It keeps the answer, the diagram and the sources, and leaves out the three key points (01, 03, 04, 05, 08) and three side notes: the privacy line on 09, the identity quorum panel on 10 and the CBDC definition on 11. Those stay on 4:5 and 16:9.
+- **16:9** keeps everything, laid out across the width.
+
+The source line is short on the artwork (for example "Redbelly whitepaper, docs, website"). The full links are in `SOURCES.md` and on each viewer page.
 
 ## Posting guide
 
@@ -111,9 +121,12 @@ You need Node 18 or newer and Playwright with Chromium.
 
 ```bash
 cd tools && npm install && npx playwright install chromium && cd ..
-node tools/render.mjs      # writes 33 PNGs, vector PDFs, og.png and the all-PNG zip; flags any overflowing text
-node tools/verify.mjs      # checks sizes, voice rules, price talk, personal credit, sources, licences
-node tools/site-check.mjs  # opens every page at desktop and phone width: errors, broken links, sideways scroll
+node tools/render.mjs        # writes 33 PNGs, vector PDFs, og.png and the all-PNG zip; flags any overflowing text
+node tools/phone-check.mjs   # text size in pt on a phone for all 33, plus phone screen previews
+node tools/verify.mjs        # sizes, phone readability, voice rules, price talk, personal credit, sources, licences
+node tools/site-check.mjs    # opens every page at desktop and phone width: errors, broken links, sideways scroll
+node tools/snapshot.mjs      # saves a text copy of every source page to verification/snapshots
+python3 tools/check_quotes.py verification/snapshots   # every quote in SOURCES.md is still on its page
 ```
 
 `node tools/render.mjs --only 07` re-renders one infographic. You can also open `board.html?id=07&f=portrait` in a browser to see one artboard at full size, and add `&anim=1` to watch it animate.
@@ -138,5 +151,6 @@ source-files/vector-pdf/              editable vector PDFs, 11 pages per format
 og.png                                1200 x 630 link preview image
 tools/                                export and check scripts (not deployed)
 SOURCES.md, VERIFICATION.md           source list and checks
+verification/                         check logs and phone screen previews (not deployed)
 LICENSES/                             font licence and asset notice
 ```

@@ -77,14 +77,19 @@ for (const item of items) {
           if (r.width && (r.bottom > ar.bottom + 1 || r.right > ar.right + 1)) out.push('spills ' + area.className + ': ' + (el.className || el.tagName));
         });
       });
-      // smallest rendered text size
+      // smallest rendered text size, and the size most of the words are set in (body)
       let min = 999;
+      const chars = {};
       document.querySelectorAll('.board *').forEach(el => {
-        if ([...el.childNodes].some(n => n.nodeType === 3 && n.textContent.trim())) {
-          min = Math.min(min, parseFloat(getComputedStyle(el).fontSize));
-        }
+        const own = [...el.childNodes].filter(n => n.nodeType === 3).map(n => n.textContent).join('').trim();
+        if (!own) return;
+        const fs = parseFloat(getComputedStyle(el).fontSize);
+        min = Math.min(min, fs);
+        // body = the explaining text: answer, diagram and points, not the series label or source line
+        if (!el.closest('.foot, .label')) chars[fs] = (chars[fs] || 0) + own.replace(/\s/g, '').length;
       });
-      return { out: [...new Set(out)].slice(0, 12), fontOk, minFont: min };
+      const body = +Object.entries(chars).sort((a, b) => b[1] - a[1])[0][0];
+      return { out: [...new Set(out)].slice(0, 12), fontOk, minFont: min, bodyFont: body };
     });
     const dir = join(root, 'downloads', f);
     await mkdir(dir, { recursive: true });
@@ -92,8 +97,8 @@ for (const item of items) {
     await page.locator('.board').screenshot({ path: join(dir, name), type: 'png' });
     const bad = check.out.length > 0 || !check.fontOk;
     if (bad) problems++;
-    report.push({ file: `downloads/${f}/${name}`, width: w, height: h, minFontPx: check.minFont, fontLoaded: check.fontOk, issues: check.out });
-    console.log(`${bad ? 'WARN' : 'ok  '} ${name}  min text ${check.minFont}px${check.out.length ? '  ' + check.out.join(' | ') : ''}`);
+    report.push({ file: `downloads/${f}/${name}`, width: w, height: h, minFontPx: check.minFont, bodyFontPx: check.bodyFont, fontLoaded: check.fontOk, issues: check.out });
+    console.log(`${bad ? 'WARN' : 'ok  '} ${name}  min text ${check.minFont}px, body ${check.bodyFont}px${check.out.length ? '  ' + check.out.join(' | ') : ''}`);
     await page.close();
   }
 }

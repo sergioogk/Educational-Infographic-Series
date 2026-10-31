@@ -76,10 +76,11 @@ check('All sources are supplied resources (or pages on them)', !offList.length, 
 
 // 6. governance uses the current process, not v1.2 or Snapshot rules
 const gov = RB.items.find(it => it.slug === 'governance');
-const govText = JSON.stringify({ t: gov.title, a: gov.answer, d: gov.data, f: gov.footer });
+const govFoot = gov.footer + ' ' + (gov.footerNote || '');
+const govText = JSON.stringify({ t: gov.title, a: gov.answer, d: gov.data, f: govFoot });
 const outdated = /(snapshot|constitution|v1\.2|whitelist|token[- ]weighted only|no quorum)/i.test(govText);
 check('Governance copy has no Snapshot or Constitution v1.2 rules', !outdated);
-check('Governance cites the voting platform and the TASK-23 changelog', /voting platform/i.test(gov.footer) && /TASK-23/.test(gov.footer));
+check('Governance cites the voting platform and the TASK-23 changelog', /voting platform/i.test(govFoot) && /TASK-23/.test(govFoot));
 
 // 7. licensed assets only: fonts are local OFL Readex Pro, logos are the official files
 const css = await readFile(join(root, 'assets/css/board.css'), 'utf8');
@@ -98,8 +99,15 @@ try {
   const rep = JSON.parse(await readFile(join(root, 'tools/render-report.json'), 'utf8'));
   const minBy = {}; rep.files.forEach(f => { const k = f.width + 'x' + f.height; minBy[k] = Math.min(minBy[k] ?? 999, f.minFontPx); });
   check('Last render had no overflowing text', rep.problems === 0, `${rep.files.length} files rendered`);
-  check('Smallest text per format (px)', true, Object.entries(minBy).map(([k, v]) => `${k}: ${v}px`).join(', '));
   check('Font loaded in every render', rep.files.every(f => f.fontLoaded));
+  // phone readability: a phone shows a picture 390 pt wide upright; 16:9 sideways full screen is 693 pt wide
+  const shownPt = f => f.width === 1920 ? 390 * 1920 / 1080 : 390;
+  const ptOf = (px, f) => px * shownPt(f) / f.width;
+  const small = rep.files.filter(f => ptOf(f.minFontPx, f) < 11).map(f => f.file);
+  const body = rep.files.filter(f => ptOf(f.bodyFontPx ?? 0, f) < 11.5).map(f => f.file);
+  check('Phone: smallest text is 11 pt or more (4:5 and 1:1 upright, 16:9 sideways)', !small.length,
+    Object.entries(minBy).map(([k, v]) => `${k}: ${v}px`).join(', ') + (small.length ? '; too small: ' + small.join(', ') : ''));
+  check('Phone: body text is 11.5 pt or more', !body.length, body.join(', '));
 } catch { check('Render report present', false, 'run node tools/render.mjs first'); }
 
 let fail = 0;

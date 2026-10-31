@@ -16,7 +16,8 @@ PASS  Logo files are the official brand kit SVGs  (redbelly-horizontal-negative.
 PASS  Font licence file included
 PASS  Vector PDFs for all 3 formats  (redbelly-explained-landscape-1920x1080.pdf, redbelly-explained-portrait-1080x1350.pdf, redbelly-explained-square-1080x1080.pdf)
 PASS  Last render had no overflowing text  (33 files rendered)
-PASS  Smallest text per format (px)  (1920x1080: 25px, 1080x1350: 21px, 1080x1080: 20px)
 PASS  Font loaded in every render
+PASS  Phone: smallest text is 11 pt or more (4:5 and 1:1 upright, 16:9 sideways)  (1920x1080: 31px, 1080x1350: 31px, 1080x1080: 31px)
+PASS  Phone: body text is 11.5 pt or more
 
-20 of 20 checks passed.
+21 of 21 checks passed.

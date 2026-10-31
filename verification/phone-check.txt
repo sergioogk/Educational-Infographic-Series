@@ -1,0 +1,40 @@
+Phone readability check, 2026-10-31
+Reference phone 390 x 844 pt. Pass marks: smallest text 11 pt, body text 11.5 pt.
+4:5 and 1:1 checked upright (shown 390 pt wide). 16:9 checked sideways, full screen (shown 693 pt wide); its upright size is listed for reference.
+
+file                                                    format  smallest          body              result
+01-what-is-redbelly-landscape-1920x1080.png             16:9    31 px = 11.2 pt   35 px = 12.6 pt   pass   (upright: 6.3 pt / 7.1 pt)
+01-what-is-redbelly-portrait-1080x1350.png              4:5     31 px = 11.2 pt   33 px = 11.9 pt   pass
+01-what-is-redbelly-square-1080x1080.png                1:1     31 px = 11.2 pt   32 px = 11.6 pt   pass
+02-why-tokenise-landscape-1920x1080.png                 16:9    31 px = 11.2 pt   36 px = 13 pt     pass   (upright: 6.3 pt / 7.3 pt)
+02-why-tokenise-portrait-1080x1350.png                  4:5     31 px = 11.2 pt   33 px = 11.9 pt   pass
+02-why-tokenise-square-1080x1080.png                    1:1     31 px = 11.2 pt   32 px = 11.6 pt   pass
+03-dbft-consensus-landscape-1920x1080.png               16:9    31 px = 11.2 pt   35 px = 12.6 pt   pass   (upright: 6.3 pt / 7.1 pt)
+03-dbft-consensus-portrait-1080x1350.png                4:5     31 px = 11.2 pt   33 px = 11.9 pt   pass
+03-dbft-consensus-square-1080x1080.png                  1:1     31 px = 11.2 pt   34 px = 12.3 pt   pass
+04-receptor-landscape-1920x1080.png                     16:9    31 px = 11.2 pt   33.12 px = 12 pt  pass   (upright: 6.3 pt / 6.7 pt)
+04-receptor-portrait-1080x1350.png                      4:5     31 px = 11.2 pt   33 px = 11.9 pt   pass
+04-receptor-square-1080x1080.png                        1:1     31 px = 11.2 pt   32 px = 11.6 pt   pass
+05-verifiable-credentials-landscape-1920x1080.png       16:9    31 px = 11.2 pt   36 px = 13 pt     pass   (upright: 6.3 pt / 7.3 pt)
+05-verifiable-credentials-portrait-1080x1350.png        4:5     31 px = 11.2 pt   33 px = 11.9 pt   pass
+05-verifiable-credentials-square-1080x1080.png          1:1     31 px = 11.2 pt   32 px = 11.6 pt   pass
+06-zk-proofs-landscape-1920x1080.png                    16:9    31 px = 11.2 pt   36 px = 13 pt     pass   (upright: 6.3 pt / 7.3 pt)
+06-zk-proofs-portrait-1080x1350.png                     4:5     31 px = 11.2 pt   33 px = 11.9 pt   pass
+06-zk-proofs-square-1080x1080.png                       1:1     31 px = 11.2 pt   32 px = 11.6 pt   pass
+07-tokeniser-landscape-1920x1080.png                    16:9    31 px = 11.2 pt   36 px = 13 pt     pass   (upright: 6.3 pt / 7.3 pt)
+07-tokeniser-portrait-1080x1350.png                     4:5     31 px = 11.2 pt   33 px = 11.9 pt   pass
+07-tokeniser-square-1080x1080.png                       1:1     31 px = 11.2 pt   32 px = 11.6 pt   pass
+08-compliance-aware-assets-landscape-1920x1080.png      16:9    31 px = 11.2 pt   36 px = 13 pt     pass   (upright: 6.3 pt / 7.3 pt)
+08-compliance-aware-assets-portrait-1080x1350.png       4:5     31 px = 11.2 pt   33 px = 11.9 pt   pass
+08-compliance-aware-assets-square-1080x1080.png         1:1     31 px = 11.2 pt   32 px = 11.6 pt   pass
+09-identity-and-accountability-landscape-1920x1080.png  16:9    31 px = 11.2 pt   36 px = 13 pt     pass   (upright: 6.3 pt / 7.3 pt)
+09-identity-and-accountability-portrait-1080x1350.png   4:5     31 px = 11.2 pt   33 px = 11.9 pt   pass
+09-identity-and-accountability-square-1080x1080.png     1:1     31 px = 11.2 pt   32 px = 11.6 pt   pass
+10-governance-landscape-1920x1080.png                   16:9    31 px = 11.2 pt   36 px = 13 pt     pass   (upright: 6.3 pt / 7.3 pt)
+10-governance-portrait-1080x1350.png                    4:5     31 px = 11.2 pt   33 px = 11.9 pt   pass
+10-governance-square-1080x1080.png                      1:1     31 px = 11.2 pt   32 px = 11.6 pt   pass
+11-project-acacia-landscape-1920x1080.png               16:9    31 px = 11.2 pt   36 px = 13 pt     pass   (upright: 6.3 pt / 7.3 pt)
+11-project-acacia-portrait-1080x1350.png                4:5     31 px = 11.2 pt   33 px = 11.9 pt   pass
+11-project-acacia-square-1080x1080.png                  1:1     31 px = 11.2 pt   32 px = 11.6 pt   pass
+
+33 of 33 pictures pass. Screens saved in verification/phone/.

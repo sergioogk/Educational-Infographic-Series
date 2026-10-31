@@ -67,24 +67,32 @@
   display: grid;
 }
 
-/* ---------- format tokens ---------- */
+/* ---------- format tokens ----------
+   Phone readability. A phone shows an image at full screen width; the reference phone
+   is 390 x 844 pt. 4:5 and 1:1 are 1080 px wide, so upright 1 pt = 2.77 px and
+   --fs-min 31px keeps every line at 11.2 pt or more, with body text at 32 to 33 px
+   (11.6 to 11.9 pt). 16:9 is 1920 px wide; full screen sideways it is 693 pt wide, so
+   31px is 11.2 pt and 36px body text is 13 pt. tools/phone-check.mjs measures this. */
 .board.landscape {
-  --pad-t: 68px; --pad-r: 88px; --pad-b: 46px; --pad-l: 110px;
-  --fs-label: 26px; --fs-title: 88px; --fs-answer: 36px;
-  --fs-lead: 34px; --fs-text: 31px; --fs-d: 34px; --fs-dh: 40px; --fs-big: 96px; --fs-foot: 25px;
-  --gap: 28px; --ic: 60px;
+  --pad-t: 60px; --pad-r: 84px; --pad-b: 40px; --pad-l: 106px;
+  --fs-min: 31px;
+  --fs-label: 31px; --fs-title: 86px; --fs-answer: 40px;
+  --fs-lead: 38px; --fs-text: 35px; --fs-d: 36px; --fs-dh: 42px; --fs-big: 96px; --fs-foot: 31px;
+  --gap: 26px; --ic: 60px;
 }
 .board.portrait {
-  --pad-t: 72px; --pad-r: 68px; --pad-b: 46px; --pad-l: 82px;
-  --fs-label: 22px; --fs-title: 74px; --fs-answer: 32px;
-  --fs-lead: 28px; --fs-text: 26px; --fs-d: 28px; --fs-dh: 32px; --fs-big: 72px; --fs-foot: 21px;
-  --gap: 34px; --ic: 54px;
+  --pad-t: 60px; --pad-r: 60px; --pad-b: 40px; --pad-l: 76px;
+  --fs-min: 31px;
+  --fs-label: 31px; --fs-title: 74px; --fs-answer: 37px;
+  --fs-lead: 35px; --fs-text: 33px; --fs-d: 33px; --fs-dh: 37px; --fs-big: 76px; --fs-foot: 31px;
+  --gap: 22px; --ic: 54px;
 }
 .board.square {
-  --pad-t: 58px; --pad-r: 64px; --pad-b: 40px; --pad-l: 78px;
-  --fs-label: 21px; --fs-title: 62px; --fs-answer: 28px;
-  --fs-lead: 26px; --fs-text: 24px; --fs-d: 25px; --fs-dh: 28px; --fs-big: 60px; --fs-foot: 20px;
-  --gap: 26px; --ic: 46px;
+  --pad-t: 50px; --pad-r: 56px; --pad-b: 34px; --pad-l: 72px;
+  --fs-min: 31px;
+  --fs-label: 31px; --fs-title: 64px; --fs-answer: 34px;
+  --fs-lead: 33px; --fs-text: 32px; --fs-d: 32px; --fs-dh: 35px; --fs-big: 64px; --fs-foot: 31px;
+  --gap: 22px; --ic: 46px;
 }
 
 /* ---------- layouts ---------- */
@@ -139,20 +147,21 @@
 /* ---------- key points ---------- */
 .board .pts ul { list-style: none; margin: 0; padding: 0; display: grid; }
 .board.landscape .pts ul { grid-template-columns: repeat(3, 1fr); column-gap: 44px; }
-.board.portrait .pts ul, .board.square .pts ul { grid-template-columns: repeat(3, 1fr); column-gap: 22px; }
 .board .pt { display: grid; min-width: 0; }
 .board.landscape .pt { grid-template-columns: var(--ic) 1fr; column-gap: 22px; align-items: start; padding-top: 16px; border-top: 2px solid var(--line); }
-.board.portrait .pt, .board.square .pt {
-  grid-template-columns: auto 1fr; column-gap: 14px; align-items: center;
-  padding: 16px 18px; border-radius: 12px; background: var(--panel); border: 2px solid var(--line);
-  align-content: start;
-}
-.board.portrait .pt > div, .board.square .pt > div { display: contents; }
-.board.portrait .pt .txt, .board.square .pt .txt { grid-column: 1 / -1; margin-top: 10px; }
-.board.portrait .pt .hx, .board.square .pt .hx { --ic: 40px; }
 .board .pt .lead { font-size: var(--fs-lead); font-weight: 500; color: var(--rb-white); line-height: 1.18; }
 .board .pt .txt { font-size: var(--fs-text); line-height: 1.34; color: var(--rb-light); margin-top: 6px; }
 .board.landscape .pt .txt { margin-top: 8px; }
+/* 4:5: one row per point, the lead in bold followed by the text, so each stays two lines */
+.board.portrait .pts ul { grid-template-columns: 1fr; row-gap: 10px; }
+.board.portrait .pt {
+  grid-template-columns: auto 1fr; column-gap: 18px; align-items: center;
+  padding: 12px 20px; border-radius: 12px; background: var(--panel); border: 2px solid var(--line);
+}
+.board.portrait .pt .hx { --ic: 44px; }
+.board.portrait .pt .lead, .board.portrait .pt .txt { display: inline; font-size: var(--fs-text); line-height: 1.3; }
+.board.portrait .pt .lead::after { content: '.'; }
+.board.portrait .pt .txt { margin: 0 0 0 0.3em; }
 
 /* hexagon icon chip */
 .board .hx { position: relative; width: var(--ic); height: calc(var(--ic) * 1.1); display: grid; place-items: center; color: var(--rb-red); flex: none; }
@@ -168,9 +177,9 @@
 }
 .board .foot .src { font-size: var(--fs-foot); line-height: 1.38; color: var(--rb-light); min-width: 0; }
 .board .foot .src b { font-weight: 500; color: var(--rb-white); }
-.board .foot .src .ver { color: var(--rb-mid); display: block; }
-.board.landscape .foot .src .ver { display: inline; }
-.board.landscape .foot .src .ver::before { content: '\00B7'; margin: 0 14px; color: var(--rb-mid); }
+.board .foot .src .ver { color: var(--rb-light); display: inline-block; white-space: nowrap; }
+.board.landscape .foot .src .ver::before { content: '\00B7'; margin: 0 0.4em; color: var(--rb-light); }
+.board.portrait .foot .src .ver, .board.square .foot .src .ver { display: block; }
 .board .foot .logo { flex: none; display: block; }
 .board.landscape .foot .logo { height: 50px; }
 .board.portrait .foot .logo, .board.square .foot .logo { height: 40px; }
@@ -181,7 +190,7 @@
 .board .cap { font-size: var(--fs-d); color: var(--rb-light); line-height: 1.32; }
 .board .dh { font-size: var(--fs-dh); font-weight: 500; color: var(--rb-white); line-height: 1.15; }
 .board .kick { font-size: calc(var(--fs-label) * 1.02); font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rb-red); }
-.board .muted { color: var(--rb-mid); }
+.board .muted { color: var(--rb-light); }
 .board .arrow { display: grid; place-items: center; color: var(--rb-red); }
 .board .arrow svg { width: 100%; height: 100%; }
 .board .glyph-ok, .board .glyph-no { display: inline-grid; place-items: center; border-radius: 50%; flex: none; }

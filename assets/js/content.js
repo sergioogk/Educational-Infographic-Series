@@ -11,7 +11,7 @@ window.RB = window.RB || {};
 RB.series = {
   name: 'Redbelly Explained',
   total: 11,
-  verified: '26 Oct 2026'
+  verified: '31 Oct 2026'
 };
 
 RB.sources = {
@@ -41,6 +41,7 @@ RB.sources = {
   tokComp:    { title: 'Tokeniser: Automated compliance', url: 'https://tokeniser.com/product/superpowers/automated-compliance' },
   task23:     { title: 'TASK-23 DAO structural changes changelog (winning entry, sourced to 1 Aug 2026)', url: 'https://redbelly.smartcodedbot.com/changelog/' },
   voting:     { title: 'Redbelly DAO voting platform', url: 'https://redbelly-governance.vercel.app/' },
+  votingList: { title: 'DAO voting platform: Proposals page', url: 'https://redbelly-governance.vercel.app/proposals' },
   votingNew:  { title: 'DAO voting platform: New proposal page (voting options)', url: 'https://redbelly-governance.vercel.app/create' },
   votingSafe: { title: 'DAO voting platform: Wallet safety page', url: 'https://redbelly-governance.vercel.app/safety' }
 };
@@ -52,20 +53,20 @@ RB.items = [
     answer: 'A layer 1 blockchain built for tokenising real world assets, where every participant is verified.',
     diagram: 'fast',
     data: {
-      core: 'Redbelly Network', coreSub: 'Layer 1, built to be FAST',
+      core: 'Redbelly Network', coreSub: 'Built to be FAST',
       tiles: [
-        { k: 'F', name: 'Finality', text: 'Final within seconds. No forks.' },
+        { k: 'F', name: 'Finality', text: 'Final in seconds. No forks.' },
         { k: 'A', name: 'Accountability', text: 'Every participant is known.' },
         { k: 'S', name: 'Security', text: 'Consensus proven correct.' },
         { k: 'T', name: 'Throughput', text: '97,500 transactions a second shown.' }
       ]
     },
     points: [
-      { icon: 'building', lead: 'Made for real assets', text: 'Issue, manage and distribute regulated financial assets as tokens.' },
+      { icon: 'building', lead: 'Made for real assets', text: 'Issue and manage regulated assets as tokens.' },
       { icon: 'flask', lead: 'Born from research', text: 'Consensus developed with the University of Sydney and CSIRO.' },
-      { icon: 'code', lead: 'Speaks Ethereum', text: 'A scalable EVM runs Solidity smart contracts.' }
+      { icon: 'code', lead: 'Speaks Ethereum', text: 'Runs Solidity smart contracts on an EVM.' }
     ],
-    footer: 'docs.redbelly.network · Redbelly whitepaper · redbelly.network',
+    footer: 'Redbelly whitepaper, docs, website',
     refs: [
       { src: 'docsHome', facts: 'Layer 1 blockchain built and optimised for real world asset tokenisation; DBFT consensus; scalable EVM.' },
       { src: 'whitepaper', facts: 'Section 3: all network participants are known (mandatory identity verification). Section 4.1: FAST (Finality, Accountability, Security, Throughput). Section 4.1.1: irreversible within seconds, cannot fork, formally verified, over 97,500 transactions per second demonstrated in production. Section 4.1.4: SEVM, Solidity. Summary: DBFT developed with The University of Sydney and CSIRO Data61.' },
@@ -76,26 +77,27 @@ RB.items = [
   {
     id: '02', slug: 'why-tokenise', short: 'Why tokenise real world assets',
     title: 'Why tokenise [real world assets]?',
-    answer: 'Tokenising records ownership as a digital token, with the asset’s rules built in. What you own stays the same. How it moves changes.',
+    answer: 'A token records ownership, with the rules written in. The asset and its legal rights stay the same.',
     diagram: 'compare',
     data: {
       left: 'Traditional', right: 'Tokenised',
       rows: [
-        { label: 'Settlement', before: 'Takes days (T+2)', after: 'Seconds, in one transaction', icon: 'clock' },
-        { label: 'Trading hours', before: 'Registry business hours', after: 'Any time, 24/7', icon: 'calendar' },
-        { label: 'Access', before: 'Large minimum investments', after: 'Smaller fractional units', icon: 'pie' },
-        { label: 'Compliance', before: 'Manual checks', after: 'Checked on every transfer', icon: 'shield' }
-      ]
+        { label: 'Settlement', before: 'Usually T+2 in Australia', after: 'Compliant transfers settle in seconds', icon: 'clock' },
+        { label: 'Transfers', before: 'Registry business hours', after: 'Can be transferred at any time', icon: 'calendar' },
+        { label: 'Access', before: 'Often large minimums', after: 'Can be split into smaller units', icon: 'pie' },
+        { label: 'Compliance', before: 'Checked by hand per transfer', after: 'Breaking a rule blocks the transfer', icon: 'shield' }
+      ],
+      note: 'Per Tokeniser, for Australian funds and companies on Redbelly. Investor eligibility rules still apply.'
     },
     points: [],
-    footer: 'Tokeniser knowledge hub · redbelly.network/asset-tokenisation',
+    footer: 'tokeniser.com, knowledge hub',
     refs: [
       { src: 'tokeniser', facts: 'FAQ: tokenisation records ownership as digital tokens and lets you program the rules of the asset.' },
-      { src: 'khWhy', facts: 'Tokenisation does not change what you own; it changes how ownership is recorded, transferred and administered. Settlement in seconds instead of T+2. Fractional access.' },
-      { src: 'khEnable', facts: 'Atomic settlement, programmable compliance enforced at every transaction, fractional ownership lowers the investment threshold, 24/7 transfers without registry business hours.' },
-      { src: 'assetTok', facts: 'Borderless 24/7 markets; automate issuance, settlement and compliance.' }
+      { src: 'khWhy', facts: 'The token is the record, not the asset itself; tokenisation does not change what you own or the legal rights attached to it. Written for Australian fund managers and companies.' },
+      { src: 'khEnable', facts: 'Settlement is typically T+2 in Australia. Registries work business hours and later transfers queue; tokenised assets can be transferred at any time. High-value assets have traditionally needed large minimum investments; any asset can be divided into smaller units. Transfer eligibility is verified manually when requested; on tokenised infrastructure rules are written into the token and a breaching transfer is rejected before it can be submitted.' },
+      { src: 'khHow', facts: 'Compliant transfers settle atomically on Redbelly Network in seconds. Transfers to an unverified wallet or an ineligible investor are rejected.' }
     ],
-    alt: 'Infographic 2 of 11, Why tokenise real world assets. Tokenising records ownership as a digital token with the asset rules built in. Compared with traditional assets, settlement drops from days to seconds, trading runs 24/7, assets split into smaller units, and compliance is checked on every transfer.'
+    alt: 'Infographic 2 of 11, Why tokenise real world assets. A digital token becomes the record of who owns an asset, with its rules written in, while the asset and its legal rights stay the same. Compared with traditional records in Australia: settlement is usually T+2, while compliant tokenised transfers on Redbelly settle in seconds; transfers can happen at any time instead of registry business hours; assets can be split into smaller units; and rule-breaking transfers are rejected instead of checked by hand. Based on Tokeniser’s guide for Australian funds and companies. Investor eligibility rules still apply.'
   },
   {
     id: '03', slug: 'dbft-consensus', short: 'DBFT consensus',
@@ -111,10 +113,10 @@ RB.items = [
     },
     points: [
       { icon: 'nodes', lead: 'No leader', text: 'Every node plays a similar role. No single point of failure.' },
-      { icon: 'lock', lead: 'Final once confirmed', text: 'No forks. A confirmed transaction cannot be reversed.' },
+      { icon: 'lock', lead: 'Final once confirmed', text: 'No forks. Cannot be reversed.' },
       { icon: 'check', lead: 'Proven correct', text: 'Formally verified. Works while under a third of nodes are faulty.' }
     ],
-    footer: 'Redbelly whitepaper · redbelly.network/research',
+    footer: 'Redbelly whitepaper, research hub',
     refs: [
       { src: 'whitepaper', facts: 'Section 4.1.1: leaderless, eliminates single points of failure, cannot fork, formally verified by parameterised model checking, irreversible within seconds; classical chains compete and waste work, Redbelly nodes combine distinct sets of transactions into a superblock (collaborative, not competitive). Section 4.1.2: BFT systems tolerate less than a third of faulty nodes.' },
       { src: 'dbftPaper', facts: 'DBFT is leaderless; each node plays a similar role, making the decision democratic.' },
@@ -125,25 +127,25 @@ RB.items = [
   {
     id: '04', slug: 'receptor', short: 'Receptor',
     title: 'What is [Receptor]?',
-    answer: 'Receptor is Redbelly’s own digital identity and verifiable credential protocol. It checks who can use the network and who can access each product.',
+    answer: 'Redbelly’s own identity and verifiable credential protocol. It checks who can use the network and each product.',
     diagram: 'receptor',
     data: {
       steps: [
-        { kind: 'node', icon: 'wallet', name: 'You', text: 'Hold credentials in a wallet' },
-        { kind: 'gate', icon: 'shield', name: 'Network access', text: 'Needs an accredited issuer’s credential' },
+        { kind: 'node', icon: 'wallet', name: 'You', text: 'Credentials in a wallet' },
+        { kind: 'gate', icon: 'shield', name: 'Network access', text: 'Accredited issuer’s credential' },
         { kind: 'node', icon: 'hex', name: 'Redbelly', text: 'Every participant verified' },
-        { kind: 'gate', icon: 'filter', name: 'Product rules', text: 'Such as: wholesale investor' },
+        { kind: 'gate', icon: 'filter', name: 'Product rules', text: 'Such as wholesale investor' },
         { kind: 'node', icon: 'token', name: 'Product', text: 'Only eligible users get in' }
       ],
       modules: ['Issuer', 'Holder', 'Verifier'],
       standard: 'Built on the W3C standard'
     },
     points: [
-      { icon: 'badge', lead: 'Accredited issuers', text: 'Only accredited issuers can grant network access.' },
-      { icon: 'filter', lead: 'Rules per product', text: 'Apps set criteria. Users prove they meet them.' },
-      { icon: 'eye', lead: 'Two ways to prove', text: 'On-chain with zero knowledge, or off-chain by sharing only some fields.' }
+      { icon: 'badge', lead: 'Accredited issuers', text: 'Only they grant network access.' },
+      { icon: 'filter', lead: 'Rules per product', text: 'Apps set them. Users prove them.' },
+      { icon: 'eye', lead: 'Two ways to prove', text: 'Zero knowledge on-chain, or some fields off-chain.' }
     ],
-    footer: 'docs.redbelly.network/pages/receptor',
+    footer: 'Redbelly docs: Receptor',
     refs: [
       { src: 'receptor', facts: 'Receptor is Redbelly’s native digital identity and verifiable credential protocol; facilitates network access so all participants are who they say they are; helps use cases surface eligibility criteria and users prove them; built on the W3C verifiable credential data model; Issuer, Holder and Verifier modules; issuers that provide network access are accredited; Proof by Query (on-chain) and Selective Disclosure (off-chain).' },
       { src: 'issuer', facts: 'Only accredited issuers can issue credentials that give users network access.' },
@@ -154,21 +156,21 @@ RB.items = [
   {
     id: '05', slug: 'verifiable-credentials', short: 'Verifiable credentials',
     title: 'Verifiable [credentials]',
-    answer: 'A digital proof about you, such as a passed AML check. A trusted issuer signs it and you keep it in your own wallet.',
+    answer: 'A digital proof about you, signed by a trusted issuer and kept in your own wallet.',
     diagram: 'vc',
     data: {
-      issuer: { name: 'Issuer', text: 'Checks you once, then signs' },
-      holder: { name: 'You', text: 'Keep it. Share proof when asked.' },
-      verifier: { name: 'Verifier', text: 'Checks the issuer\u2019s signature' },
+      issuer: { name: 'Issuer', text: 'Checks you, then signs' },
+      holder: { name: 'You', text: 'Keep it, share proof' },
+      verifier: { name: 'Verifier', text: 'Checks the signature' },
       arrows: ['Issues', 'Shares proof', 'The verifier trusts the issuer'],
       card: { type: 'AML/CTF credential', rows: [['Status', 'Passed'], ['Issued to', 'Your wallet']], sig: 'Signed by issuer' }
     },
     points: [
-      { icon: 'repeat', lead: 'Reuse it', text: 'Reusable identity and KYC credentials cut repeat onboarding.' },
-      { icon: 'wallet', lead: 'Keep it', text: 'Your data stays with you, not in every company’s database.' },
-      { icon: 'key', lead: 'Trust it', text: 'Checked against the issuer’s public key, so forgeries fail.' }
+      { icon: 'repeat', lead: 'Reuse it', text: 'Less repeat KYC onboarding.' },
+      { icon: 'wallet', lead: 'Keep it', text: 'Your data stays with you.' },
+      { icon: 'key', lead: 'Trust it', text: 'Forgeries fail the check.' }
     ],
-    footer: 'Redbelly whitepaper · docs.redbelly.network · redbelly.network/asset-tokenisation',
+    footer: 'Redbelly whitepaper, docs, website',
     refs: [
       { src: 'receptor', facts: 'Issuer, Holder and Verifier modules; W3C verifiable credential data model.' },
       { src: 'whitepaper', facts: 'Section 4.2: credential data model based on W3C and Iden3; user data kept at the edge, not duplicated across each service provider (no honeypots of sensitive data).' },
@@ -188,15 +190,15 @@ RB.items = [
         { icon: 'question', name: 'The question', text: 'Is this user over 18?' },
         { icon: 'wallet', name: 'Your wallet', text: 'Builds a proof. Birth date stays hidden.' },
         { icon: 'contract', name: 'Smart contract', text: 'Checks the proof on Redbelly' },
-        { icon: 'check', name: 'The answer', text: 'Just true or false. No personal data on-chain.' }
+        { icon: 'check', name: 'The answer', text: 'True or false. No personal data on-chain.' }
       ],
       compare: [
-        { name: 'Selective Disclosure', text: 'Reveals only the fields asked for. Off-chain.' },
-        { name: 'Zero knowledge (Proof by Query)', text: 'Shares only the proof. No data at all.' }
+        { name: 'Selective Disclosure', text: 'Shows only the fields asked for. Off-chain.' },
+        { name: 'Proof by Query (zero knowledge)', text: 'Shares only the proof. No data.' }
       ]
     },
     points: [],
-    footer: 'docs.redbelly.network: Selective Disclosure vs Proof by Query',
+    footer: 'Redbelly docs: Eligibility SDK',
     refs: [
       { src: 'sdzk', facts: 'Proof by Query uses zero knowledge proofs to prove a statement without revealing data; verifier asks a yes or no query such as is the user over 18; wallet generates a proof; on-chain a smart contract verifies it; result is true or false with no personal data exposed on-chain. Selective Disclosure reveals only specific requested fields, off-chain. In SD data is revealed; in PBQ only the proof is shared.' },
       { src: 'pbq', facts: 'Age over 18 proven from a passport credential without disclosing the exact birth date.' }
@@ -206,7 +208,7 @@ RB.items = [
   {
     id: '07', slug: 'tokeniser', short: 'Tokeniser',
     title: 'What is [Tokeniser]?',
-    answer: 'A Redbelly Network project that lets funds and companies issue and run tokenised assets on Redbelly, without a technology project.',
+    answer: 'A Redbelly Network project that lets funds and companies issue and run tokenised assets, without a technology project.',
     diagram: 'tokeniser',
     data: {
       steps: [
@@ -224,7 +226,7 @@ RB.items = [
       statNote: 'Figures published by Tokeniser'
     },
     points: [],
-    footer: 'tokeniser.com · Tokeniser knowledge hub',
+    footer: 'tokeniser.com, knowledge hub',
     refs: [
       { src: 'tokeniser', facts: 'Tokeniser is a Redbelly Network project; benefits of tokenisation without the technology project; A$1.2B issued equity and funds, 160+ companies and funds, A$2B+ transactions.' },
       { src: 'khWhat', facts: 'Platform for fund managers, company secretaries and asset administrators to issue, manage, transfer and report on tokenised assets on Redbelly Network.' },
@@ -239,79 +241,81 @@ RB.items = [
     diagram: 'compliance',
     data: {
       tokenName: 'Tokenised asset',
-      rules: ['Identity verified (KYC, AML)', 'Eligible investor type', 'Transfer limits, like lock-ups', 'Foreign ownership caps'],
+      rules: ['Identity verified (KYC, AML)', 'Eligible investor type', 'Lock-up periods', 'Foreign ownership caps'],
       ok: { to: 'Verified, eligible wallet', result: 'Settles' },
       no: { to: 'Unverified wallet', result: 'Rejected before it settles' }
     },
     points: [
-      { icon: 'code', lead: 'Programmed in', text: 'Issuers write eligibility rules into the asset itself.' },
-      { icon: 'list', lead: 'Checked every time', text: 'Transfers that break a rule fail. Every check is logged.' },
-      { icon: 'link', lead: 'Inherited', text: 'Apps using the asset on Redbelly inherit its rules.' }
+      { icon: 'code', lead: 'Programmed in', text: 'Issuers write the rules into the asset.' },
+      { icon: 'list', lead: 'Checked every time', text: 'Failed checks stop the trade. All are logged.' },
+      { icon: 'link', lead: 'Inherited', text: 'Apps using the asset inherit its rules.' }
     ],
-    footer: 'Redbelly whitepaper · redbelly.network/asset-tokenisation · Tokeniser',
+    footer: 'Redbelly whitepaper, website, Tokeniser',
     refs: [
       { src: 'whitepaper', facts: 'Section 2: eligibility criteria programmed into the definition of the asset; only parties that can prove eligibility can hold the token. Section 3: compliance becomes an inherent property of the asset; compliance composability means interacting assets and protocols inherit the compliance properties of underlying assets.' },
       { src: 'assetTok', facts: 'Defined investor eligibility enforced at the point of trade; AML, CTF and Travel Rule requirements can be applied as needed.' },
       { src: 'khComp', facts: 'Rules encoded into the token and enforced at every transfer: KYC/AML status, eligibility, transfer restrictions such as lock-ups, foreign ownership limits; non-compliant transfers rejected before submission; records kept for audit.' },
       { src: 'tokComp', facts: 'Trades that fail a check do not proceed, and every check is logged.' }
     ],
-    alt: 'Infographic 8 of 11, Compliance aware assets. The rules travel with the asset, such as verified identity, eligible investor type, transfer limits and foreign ownership caps. A transfer to a verified eligible wallet settles. A transfer to an unverified wallet is rejected before it settles.'
+    alt: 'Infographic 8 of 11, Compliance aware assets. The rules travel with the asset, such as verified identity, eligible investor type, lock-up periods and foreign ownership caps. A transfer to a verified eligible wallet settles. A transfer to an unverified wallet is rejected before it settles.'
   },
   {
     id: '09', slug: 'identity-and-accountability', short: 'Identity and accountability',
     title: 'Identity and [accountability]',
-    answer: 'On Redbelly, every participant is known and cheating nodes can be caught with proof. The whitepaper calls this accountable blockspace.',
+    answer: 'Every network participant is identity-verified. Nodes that try to make honest nodes disagree leave signed evidence.',
     diagram: 'accountability',
     data: {
       rows: [
-        { label: 'People', steps: [
+        { label: 'Participants', steps: [
           { icon: 'users', text: 'People, businesses and AI agents' },
           { icon: 'badge', text: 'Verified by accredited issuers' },
-          { icon: 'link', text: 'Every transaction traces to someone responsible' }
+          { icon: 'link', text: 'Transactions can be tied to a responsible party' }
         ] },
         { label: 'Nodes', steps: [
-          { icon: 'alert', text: 'A node tries to cheat' },
-          { icon: 'sign', text: 'Its signed messages become proof of fraud' },
-          { icon: 'remove', text: 'Proven faulty nodes are removed' }
+          { icon: 'alert', text: 'Faulty nodes try to cause disagreement' },
+          { icon: 'sign', text: 'Their signed traces become proof of fraud' },
+          { icon: 'remove', text: 'Enough proof removes them from consensus' }
         ] }
       ],
-      note: 'This works even if a majority of nodes collude.',
-      privacy: 'Identities are verified. Zero knowledge proofs keep personal data private.'
+      note: 'Designed to tolerate attackers that control more than half the system.',
+      privacy: 'Zero knowledge proofs can prove a fact without revealing the data.'
     },
     points: [],
-    footer: 'Redbelly whitepaper · redbelly.network/projectacacia',
+    footer: 'Redbelly whitepaper, docs, Acacia page',
     refs: [
-      { src: 'whitepaper', facts: 'Section 3 Accountable Blockspace: all network participants are known through accredited verifiable credential issuers, from individuals to businesses to AI agents; every transaction can be tied back to a responsible entity; malicious nodes detected and punished using undeniable proofs of fraud even with a colluding majority. Section 4.1.2: faulty nodes leave cryptographically signed traces that honest nodes combine into proofs of fraud; exclusion protocol removes them. Summary page: Polygraph.' },
-      { src: 'acacia', facts: 'Participants verify their identities, but their privacy remains protected through zero knowledge proofs.' }
+      { src: 'whitepaper', facts: 'Section 3 Accountable Blockspace: mandatory identity verification for all network participants through accredited verifiable credential issuers, from individuals to businesses to AI agents; all transactions can be tied back to a responsible entity. Section 4.1.2: designed to tolerate an adversary that controls more than half the system; if honest nodes disagree on the next block, the system can eventually output at least n/3 faulty nodes responsible; faulty nodes that try to cause disagreement leave cryptographically signed traces that honest nodes combine into proofs of fraud; once enough proofs are gathered, an exclusion protocol removes the identified faulty nodes from the consensus committee.' },
+      { src: 'acacia', facts: 'Participants verify their identities, but their privacy remains protected through zero knowledge proofs.' },
+      { src: 'sdzk', facts: 'Zero knowledge proofs let users prove a statement is true without revealing the underlying data.' }
     ],
-    alt: 'Infographic 9 of 11, Identity and accountability. People, businesses and AI agents are verified by accredited issuers, so every transaction traces back to someone responsible. If a node tries to cheat, its signed messages become proof of fraud and it is removed, even if a majority colludes.'
+    alt: 'Infographic 9 of 11, Identity and accountability. Every network participant is identity-verified: people, businesses and AI agents are verified by accredited issuers, so transactions can be tied to a responsible party. Consensus nodes are accountable too: faulty nodes that try to cause disagreement leave signed traces, honest nodes combine them into proof of fraud, and with enough proof the faulty nodes are removed from the consensus committee. The whitepaper says this is designed to tolerate attackers that control more than half the system. Zero knowledge proofs can prove a fact without revealing the data.'
   },
   {
     id: '10', slug: 'governance', short: 'Governance',
     title: 'How the DAO [decides]',
-    answer: 'Redbelly Community DAO members vote on the DAO voting platform. Only verified wallets can vote, and every ballot is signed and public.',
+    answer: 'Only verified wallets can vote on the DAO voting platform. Every ballot is signed and public.',
     diagram: 'governance',
     data: {
       steps: [
-        { icon: 'doc', name: 'Propose', text: 'Signed, no gas. Locked once voting opens.' },
+        { icon: 'doc', name: 'Propose', text: 'Signed, no gas. Locked once open.' },
         { icon: 'badge', name: 'Vote', text: 'Only wallets with a Receptor credential.' },
-        { icon: 'scale', name: 'Count', text: 'Each proposal sets its method, power and quorum.' },
-        { icon: 'receipt', name: 'Record', text: 'Signed ballots, receipts on IPFS. Anyone can check.' }
+        { icon: 'scale', name: 'Count', text: 'Method, power and quorum set per proposal.' },
+        { icon: 'receipt', name: 'Record', text: 'Signed ballots, receipts on IPFS.' }
       ],
       quorum: { name: 'Identity quorum', text: 'A minimum number of different verified voters. One large holder cannot meet it alone.' },
       inForce: {
         title: 'In force now',
         items: [
-          'New treasury-funded work is paused until a future vote.',
+          'New treasury-funded work paused until a future vote.',
           'High Council: 3 seats, elected July 2026.',
           '5 pods: Marketing, Builder/Develop, Researcher, Community, Partnerships.'
         ]
       }
     },
     points: [],
-    footer: 'DAO voting platform, checked 26 Oct 2026 · TASK-23 changelog, as of 1 Aug 2026',
-    footerNoVerified: true,
+    footer: 'DAO voting platform, checked 31 Oct 2026',
+    footerNote: 'TASK-23 changelog, as of 1 Aug 2026',
     refs: [
+      { src: 'votingList', facts: 'Signature voting on Redbelly, no gas. Proposal list checked for later votes that change what is in force: none.' },
       { src: 'voting', facts: 'How voting works today: every address clears Redbelly’s passport-backed identity check; signature voting, no gas; receipts on IPFS; results show voters, quorum and identity quorum.' },
       { src: 'votingNew', facts: 'Publishing signs a message, costs no gas, and a proposal cannot be edited once open. Voting systems: single choice, approval, weighted, quadratic, ranked choice, Copeland, one verified address one vote. Voting power: RBNT balance, token balance or verified identity. Verified wallets only: only wallets holding a Receptor credential can vote. Quorum and identity quorum (distinct verified voters; a power quorum can be met by one large holder alone, this cannot).' },
       { src: 'votingSafe', facts: 'A vote is a signed message, never a transaction; signatures are stored with ballots so anyone can re-verify.' },
@@ -328,18 +332,18 @@ RB.items = [
       timeline: [
         { when: '2024', text: 'Phase 1 maps settlement models' },
         { when: 'Jul 2025', text: 'Phase 2 starts. Redbelly selected.' },
-        { when: 'Jul 2025 to Feb 2026', text: 'Live pilots with real money and assets' },
+        { when: 'Feb 2026', text: 'Live pilots with real money end' },
         { when: 'May 2026', text: 'RBA publishes its Final Report' }
       ],
       stats: [
-        { v: '3', l: 'networks received the RBA’s pilot wholesale CBDC. Redbelly was the only public one.' },
+        { v: '3', l: 'networks got the RBA’s pilot wholesale CBDC. Redbelly was the only public one.' },
         { v: '5', l: 'of 20 completed use cases ran on Redbelly mainnet.' },
-        { v: 'Under 4 min', l: 'to issue and resell a tokenised bond on Redbelly. Normally up to 4 days.' }
+        { v: 'Under 4\u00a0min', l: 'to issue and resell a tokenised bond. Normally up to 4 days.' }
       ],
       gloss: 'Wholesale CBDC: central bank digital money used between financial institutions.'
     },
     points: [],
-    footer: 'TASK-07 Project Acacia deep dive · redbelly.network/projectacacia · tokeniser.com',
+    footer: 'TASK-07 deep dive, Redbelly, Tokeniser',
     refs: [
       { src: 'task07', facts: 'Phase 1 completed 2024 (conceptual settlement models); Phase 2 July 2025 to February 2026; Redbelly selected July 2025; 20 completed use cases on 6 DLT platforms; RBA issued pilot wCBDC onto 3 platforms and Redbelly was the only public one; 4 lead participants used Redbelly mainnet across 5 use cases; CLIFFO Series 1 bond issuance, coupon registration and secondary transfer in under four minutes, conventionally up to four days; Final Report May 2026; wholesale CBDC is used between regulated financial institutions, not consumer wallets.' },
       { src: 'acacia', facts: 'Redbelly selected for the RBA’s Project Acacia; live transactions using real tokenised assets and AUD on Redbelly Network.' },
